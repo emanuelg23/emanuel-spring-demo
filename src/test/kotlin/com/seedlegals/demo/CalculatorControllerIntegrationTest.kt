@@ -21,11 +21,47 @@ class CalculatorControllerIntegrationTest {
     fun add() {
         mockMvc
             .perform(
-                get("/add")
+                get("/calculator/add")
                     .queryParam("a", "2")
                     .queryParam("b", "3")
             )
             .andExpect(status().isOk)
             .andExpect(content().string(containsString("5")))
+    }
+
+    @Test
+    fun subtract() {
+        mockMvc
+            .perform(
+                get("/calculator/subtract")
+                    .queryParam("a", "8")
+                    .queryParam("b", "3")
+            )
+            .andExpect(status().isOk)
+            .andExpect(content().string(containsString("5")))
+    }
+
+    @Test
+    fun multiply() {
+        mockMvc
+            .perform(
+                get("/calculator/multiply")
+                    .queryParam("a", "2")
+                    .queryParam("b", "3")
+            )
+            .andExpect(status().isOk)
+            .andExpect(content().string(containsString("6")))
+    }
+
+    @Test
+    fun divide() {
+        mockMvc
+            .perform(
+                get("/calculator/divide")
+                    .queryParam("a", "18")
+                    .queryParam("b", "3")
+            )
+            .andExpect(status().isOk)
+            .andExpect(content().string(containsString("6")))
     }
 }

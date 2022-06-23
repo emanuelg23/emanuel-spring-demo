@@ -20,16 +20,22 @@ class CalculatorServiceTest {
     }
 
     @Test
-    fun subtractTwoNumbers() {
+    fun `subtract two numbers`() {
         val result = unit.subtract(10, 4)
 
         assertEquals(6, result)
     }
 
     @Test
-    fun multipleTwoNumbers() {
-        val result = unit.multiple(2, 3)
+    fun `multiply two numbers`() {
+        val result = unit.multiply(2, 3)
 
         assertEquals(6, result)
+    }
+
+    @Test
+    fun `divide two integers`() {
+        val result = unit.divide(1f, 2f)
+        assertEquals(0.5f, result)
     }
 }

@@ -12,7 +12,12 @@ class CalculatorService {
         return a - b
     }
 
-    fun multiple(a: Int, b: Int): Int {
+    fun multiply(a: Int, b: Int): Int {
         return a * b
     }
+
+    fun divide(a: Float, b: Float): Float {
+        return (a / b)
+    }
+
 }
