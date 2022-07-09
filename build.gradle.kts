@@ -18,6 +18,9 @@ dependencies {
     testImplementation("org.junit.jupiter:junit-jupiter:5.8.2")
     testImplementation("io.mockk:mockk:1.12.4")
     testImplementation("org.springframework.boot:spring-boot-starter-test:2.7.0")
+    implementation("org.springdoc:springdoc-openapi-data-rest:1.6.9")
+    implementation("org.springdoc:springdoc-openapi-ui:1.6.9")
+    implementation("org.springdoc:springdoc-openapi-kotlin:1.6.9")
 }
 
 tasks.withType<KotlinCompile> {

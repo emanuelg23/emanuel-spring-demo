@@ -11,17 +11,20 @@ class StopWatchController(
 ) {
 
     @GetMapping("/run")
-    fun start(): Long? {
+    fun run(): Long? {
         stopWatchService.start()
         Thread.sleep(1000)
         stopWatchService.stop()
         return stopWatchService.difference()
     }
 
-//    @GetMapping("/stop")
-//    fun stop(): Long = stopWatchService.stop().toEpochMilli()
-//
-//    @GetMapping("/difference")
-//    fun difference(): Long? = stopWatchService.difference()
+    @GetMapping("/start")
+    fun start(): Long = stopWatchService.start().toEpochMilli()
+
+    @GetMapping("/stop")
+    fun stop(): Long = stopWatchService.stop().toEpochMilli()
+
+    @GetMapping("/difference")
+    fun difference(): Long? = stopWatchService.difference()
 
 }
